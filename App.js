@@ -5,9 +5,11 @@ import { StyleSheet, Text, View } from 'react-native';
 //importing login from screens
 import Login from './screens/Login';
 import Signup from './screens/Signup';
+import ResetPassword from './screens/ResetPassword';
+
 
 export default function App() {
-  return <Signup />;
+  return <Login/>;
 }
 
 const styles = StyleSheet.create({
