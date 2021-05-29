@@ -38,7 +38,7 @@ import {View} from 'react-native';
 //colors
 const {brand, darkLight, primary} = Colors;
 
-const Login = () => {
+const ResetPassword = () => {
     const [hidePassword, setHidePassword] = useState(true);
 
 
@@ -47,11 +47,11 @@ const Login = () => {
         <StatusBar style="dark" />
         <InnerContainer>
             <PageLogo resizeMode="cover" source={require('./../assets/img/img.jpg')} />
-            <PageTitle>Welcome!</PageTitle>
+            <PageTitle>Reset Password</PageTitle>
            {/* <SubTitle>Login from here</SubTitle> */}
 
             <Formik
-            initialValues={{email:'', password: ''}}
+            initialValues={{newPassword:'', confirmPassword: ''}}
             onSubmit={(values) => {
                 console.log(values);
             }}
@@ -60,24 +60,27 @@ const Login = () => {
 
                 <MyTextInput 
                 
-                    label="Email Address"
-                    icon="mail"
-                    placeholder="your@mail.com"
-                    placeholderTextColor={darkLight}
-                    onChangeText={handleChange('email')}
-                    onBlur={handleBlur('email')}
-                    value={values.email}
-                    keyboardType="email-addrees"
+                label="New Password"
+                icon="lock"
+                placeholder="* * * * * * * * *"
+                placeholderTextColor={darkLight}
+                onChangeText={handleChange('newPassword')}
+                onBlur={handleBlur('newPassword')}
+                value={values.password}
+                secureTextEntry={hidePassword}
+                isPassword={true}
+                hidePassword={hidePassword}
+                setHidePassword={setHidePassword}
 
                 />
                 <MyTextInput 
                 
-                label="Password"
+                label="Confirm Password"
                 icon="lock"
                 placeholder="* * * * * * * * *"
                 placeholderTextColor={darkLight}
-                onChangeText={handleChange('password')}
-                onBlur={handleBlur('password')}
+                onChangeText={handleChange('confirmPassword')}
+                onBlur={handleBlur('confirmPassword')}
                 value={values.password}
                 secureTextEntry={hidePassword}
                 isPassword={true}
@@ -85,30 +88,13 @@ const Login = () => {
                 setHidePassword={setHidePassword}
 
             />
-            <MsgBox>...</MsgBox>
-                {/* Forget Password */}
-                <ExtraView>
-                    <ExtraText>Forgot Password?</ExtraText>
-                    <TextLink>
-                    <TextLinkContent>Click here</TextLinkContent>
-                    </TextLink>
-                </ExtraView>
-
-                {/* Login Button */}
+            
+                {/* Reset Password Button */}
                 <StyledButton onPress={handleSubmit}>
-                    <ButtonText>Login</ButtonText>
+                    <ButtonText>Reset Password</ButtonText>
                 </StyledButton>
             
-                {/* or */}
-                <ExtraView>
-                    <ExtraText>────────  or  ────────</ExtraText>
-                </ExtraView>
-
-                 {/* SignUp */}
-                <StyledButton google={true} onPress={handleSubmit}>
-                   <ButtonText google={true}>Sign Up</ButtonText>
-                </StyledButton>
-
+                
             </StyledFormArea>)}
 
             
@@ -138,4 +124,4 @@ const MyTextInput = ({label, icon, isPassword, hidePassword, setHidePassword, ..
         </View>);
 };
 
-export default Login;
+export default ResetPassword;
