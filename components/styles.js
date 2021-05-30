@@ -13,7 +13,8 @@ export const Colors = {
     darkLight: "#9CA3AF",
     brand: "#6D28D9",
     green: "#10B981",
-    red: "#EF4444",
+    red: "#FF8C00",
+    
 };
 
 //define colors to easily use them
@@ -22,7 +23,7 @@ const {primary, secondary, tertiary, darkLight, brand, green, red} = Colors;
 export const StyledContainer = styled.View`
     flex: 1;
     padding: 25px;
-    paddingTop: ${StatusBarHeight + 10}px;
+    paddingTop: ${StatusBarHeight + 0}px;
     background-color: ${primary};
     `
 
@@ -176,6 +177,43 @@ export const PageTitle = styled.Text`
         font-size: 15px;
 
     `;
+//home page designs
+    export const HomeLogo = styled.Image`
+    width: 399px;
+    height: 100px;
+    borderRadius: 30;
+    
+    borderColor: ${primary};
+   
+
+    `;
+
+    
+     export const ViewHeader = styled.View`
+    
+        paddingVertical: 20;
+        flexDirection: row;
+        alignItems: center;
+        marginHorizontal: 2;
+ `;
+
+ export const ViewCart = styled.View`
+    height: 100;
+    width: 320;
+    elevation: 15;
+    borderRadius: 10;
+    backgroundColor: ${primary};
+    marginVertical: 10;
+    marginHorizontal: 20;
+    paddingHorizontal: 10;
+    flex-direction: row;
+    justify-content: center;
+    alignItems: center;
+    
+
+ 
+ `;
+
 
 
 
